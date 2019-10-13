@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Button, Link } from 'semantic-ui-react';
+import { Grid, Image, Button} from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom'
 
 class GridWithButton extends React.Component {
@@ -11,17 +11,11 @@ class GridWithButton extends React.Component {
             redirect: true
         })
     }
-    // renderRedirect = () => {
-    //     // this.props.history.push(`/buttoncontent`);
-    //     return <Redirect to='/buttoncontent' />
-    // }
-
     renderRedirect = () => {
         if (this.state.redirect) {
             return <Redirect to='/buttoncontent' />
         }
     }
-
     render() {
         return (
             <Grid>
@@ -44,4 +38,4 @@ class GridWithButton extends React.Component {
         )
     }
 }
-export default GridWithButton
+export default GridWithButton;

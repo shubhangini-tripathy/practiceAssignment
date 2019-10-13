@@ -2,9 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ButtonContent from './ButtonContent';
 import Home from './Dashboard';
-import GridWithButton from './GridWithButton';
-// import { createBrowserHistory } from "history";
-
 class Main extends React.Component {
   render() {
     // const history = createBrowserHistory();
@@ -16,10 +13,6 @@ class Main extends React.Component {
               path='/'
               render={props => <Home {...props} />}
             />
-            {/* <Route exact
-              path='/'
-              render={props => <GridWithButton {...props} />}
-            /> */}
             <Route exact
               path='/buttoncontent'
               render={props => <ButtonContent {...props} />}

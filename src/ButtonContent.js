@@ -1,6 +1,6 @@
 import React from 'react';
 import { Message } from 'semantic-ui-react';
-import { Grid, Image, Button, Link } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 const ButtonContent = (props) => (
 
