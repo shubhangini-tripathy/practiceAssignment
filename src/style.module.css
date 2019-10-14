@@ -21,17 +21,8 @@
   color: #09d3ac;
 }
 
-.uppercontainercolor {
-  background-color: #FDFFFE;
-}
-
-.lowercontainercolor {
+.lowergridcolor {
   background-color: #E5F5ED;
-}
-
-.tag {
-  font-style: oblique;
-  font-size: 20px
 }
 
 .button { 
@@ -57,5 +48,10 @@
 .header {
   font-size: 50px;
   text-align: center;
+}
+
+.centeralignment {
+  display: flex;
+  justify-content: center;
 }
 

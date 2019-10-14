@@ -13,20 +13,20 @@ class DashBoard extends React.Component {
         return (
             <React.Fragment>
                 <Grid>
-                    <Grid.Column width={2} />
-                    <Grid.Column width={12}>
+                    <Grid.Column width={3} />
+                    <Grid.Column width={10}>
                         <p className={styles.font}>Earning Reward is as easy as 1,2,3</p>
                         <Grid columns='equal'>
                             <Grid.Row>
                                 {sampleData.map(
                                     (data, i) => (<Grid.Column key={i}>
                                         <Image src={data[0]} size='medium' />
-                                        <Statistic.Group widths='four'>
-                                            <Statistic color='teal' >
+                                        <div className={styles.centeralignment}>
+                                            <Statistic color='teal'>
                                                 <Statistic.Value >
                                                     {i + 1}</Statistic.Value>
                                             </Statistic>
-                                        </Statistic.Group>
+                                        </div>
                                         <Header as='h2' disabled >
                                             {data[1]}
                                         </Header>
@@ -37,7 +37,7 @@ class DashBoard extends React.Component {
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
-                    <Grid.Column width={2}></Grid.Column>
+                    <Grid.Column width={3}></Grid.Column>
                 </Grid>
             </React.Fragment>
         )

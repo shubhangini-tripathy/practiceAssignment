@@ -23,8 +23,7 @@ class GridWithButton extends React.Component {
         const buttonText = ['Singup with LinkedIn', 'Signin with LinkedIn'];
 
         return (
-
-            <Grid columns='equal' className={styles.lowercontainercolor}>
+            <Grid columns='equal' className={styles.lowergridcolor}>
                 <Grid.Column><p className={styles.font}>Companies</p></Grid.Column>
                 <Grid.Column><p className={styles.font}>Users</p></Grid.Column>
                 <Grid.Row>
@@ -39,7 +38,6 @@ class GridWithButton extends React.Component {
                 </Grid.Row>
                 {this.renderRedirect()}
             </Grid>
-
         )
     }
 }
