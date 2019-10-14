@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Image, Button} from 'semantic-ui-react';
-import { Redirect } from 'react-router-dom'
+import { Grid, Image, Header } from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom';
+import styles from './style.module.css';
 
 class GridWithButton extends React.Component {
     state = {
@@ -17,24 +18,28 @@ class GridWithButton extends React.Component {
         }
     }
     render() {
+        const sampleData = [['https://objective-neumann-2002d8.netlify.com/static/media/image.d48ff2b2.png', 'Your feedback is important and has value.let us help you voice be heard and get started earning your rewards and points.Cash in or donate to your favorite charity.its up to you'], [
+            'https://objective-neumann-2002d8.netlify.com/static/media/image.d48ff2b2.png', 'Go in quality insights from your most important partners,your customers and future customer.Get feedback on your company.and other companies in tech industry']];
+        const buttonText = ['Singup with LinkedIn', 'Signin with LinkedIn'];
+
         return (
-            <Grid>
-                <Grid.Row columns={2}>
-                    {this.renderRedirect()}
-                    <Grid.Column>
-                        <Image src='https://icon-library.net/images/icon-company/icon-company-4.jpg' size='large' />
-                        <div>
-                            <Button primary onClick={this.setRedirect}>Primary</Button>
-                        </div>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Image src='https://p7.hiclipart.com/preview/802/535/682/users-group-computer-icons-membership.jpg' size='large' />
-                        <div>
-                            <Button primary onClick={this.setRedirect}>Primary</Button>
-                        </div>
-                    </Grid.Column>
+
+            <Grid columns='equal' className={styles.lowercontainercolor}>
+                <Grid.Column><p className={styles.font}>Companies</p></Grid.Column>
+                <Grid.Column><p className={styles.font}>Users</p></Grid.Column>
+                <Grid.Row>
+                    {sampleData.map(
+                        (data, i) => (<Grid.Column key={i}>
+                            <Image src={data[0]} size='medium' />
+                            <Header as='h2' disabled >
+                                {data[1]}
+                            </Header>
+                            <button className={styles.button} primary onClick={this.setRedirect}>{buttonText[i]}</button>
+                        </Grid.Column>))}
                 </Grid.Row>
+                {this.renderRedirect()}
             </Grid>
+
         )
     }
 }
