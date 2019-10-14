@@ -8,21 +8,20 @@ import styles from './style.module.css';
 
 class DashBoard extends React.Component {
     render() {
+        const sampleImages = ['https://www.steelheadstalkerstackle.com/wp-content/uploads/2017/10/shop-earn-redeem.png',
+            'https://s3.amazonaws.com/s3.delivery.com/PointsPage/point-cycle.png',
+            'https://mtiproducts.com/wp-content/uploads/2016/06/refferal.png'];
+
         return (
             <React.Fragment>
                 <CssBaseline />
                 <Container fixed>
                     <Grid>
                         <Grid.Row columns={3}>
-                            <Grid.Column>
-                                <Image src='https://www.steelheadstalkerstackle.com/wp-content/uploads/2017/10/shop-earn-redeem.png' size='large' />
-                            </Grid.Column>
-                            <Grid.Column>
-                                <Image src='https://s3.amazonaws.com/s3.delivery.com/PointsPage/point-cycle.png' size='large' />
-                            </Grid.Column>
-                            <Grid.Column>
-                                <Image src='https://mtiproducts.com/wp-content/uploads/2016/06/refferal.png' size='large' />
-                            </Grid.Column>
+                            {sampleImages.map(
+                                image => (<Grid.Column>
+                                    <Image src={image} size='large' />
+                                </Grid.Column>))}
                         </Grid.Row>
                     </Grid>
                     <Typography component="div" className={styles.uppercontainercolor} />
@@ -31,7 +30,6 @@ class DashBoard extends React.Component {
                 <Container fixed className={styles.lowercontainercolor}>
                     <GridWithButton />
                     <Typography component="div" />
-
                 </Container>
             </React.Fragment>
         )
